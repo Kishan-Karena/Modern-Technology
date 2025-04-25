@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+#div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+    background: #252839;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Mochiy Pop One', sans-serif;
+  }
+  #p
+  {
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5); 
+  }
+  #ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  #ul #li {
+    position: relative;
+    list-style: none;
+  }
+  #ul #li #a {
+    font-size: 2em;
+    text-decoration: none;
+    letter-spacing: 2px;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5); 
+  }
+  #ul #li #a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--clr);
+    width: 0;
+    overflow: hidden;
+    transition: 1s;
+    border-right: 8px solid var(--clr);
+    -webkit-text-stroke: 1px var(--clr); 
+  }
+  #ul #li #a:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 25px var(--clr))
+  }
+
+.i1{
+    width: 100%;
+    height: 500px;   
+}
+
+#i2{
+    float: left;
+    width: 48%;
+    height: 45%;
+    border-radius: 6px;
+    margin-right: 0.5cm;
+}
+
+#d1{
+    font-size: 18px;
+    text-align: justify;
+}
+#p1{
+    font-size: 18px;
+    text-align: justify;
+}
+#p2{
+    font-size: 18px;
+    text-align: justify;
+}
+#i3{
+    width: 100%;
+}
+.p1{
+    font-size: 18px;
+    text-align: justify;
+}
+.ilg{
+    width: 100%;
+}
+.ism{
+    width: 400px;
+    height: 230px;
+    border-radius: 10px;
+} 
+#p3{
+    color: rgb(46, 141, 173);
+}
+#p3:hover{
+    color: #de2b14;
+    font-size: 25px;
+}
+#p4:hover{
+    color: #de2b14;
+    font-size: 25px;
+}
+#p5:hover{
+    color: #de2b14;
+    font-size: 25px;
+}
+#p6:hover{
+    color: #de2b14;
+    font-size: 25px;
+}
+#fiex{
+    background-attachment: local;
+}
+#i5{
+    background-attachment: fixed;
+}
+
+
+/* footer */
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    height: auto;
+    width: 100%;
+
+    padding-top: 40px;
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+ .footer-content h3 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+ .footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+} 
+
+
+.footer-bottom {
+    background: #000505;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    float: left;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom p a {
+    color: #44bae8;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+.footer-menu {
+    float: right;
+
+}
+
+.footer-menu ul {
+    display: flex;
+}
+
+.footer-menu ul li {
+    padding-right: 10px;
+    display: block;
+}
+
+.footer-menu ul li a {
+    color: #ba4201;
+    text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+    color: #27bcda;
+}
+
+@media (max-width:500px) {
+    .footer-menu ul {
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+.div {
+    width: 250px;
+    overflow: hidden;
+    background: linear-gradient(18deg, #36fa00, #ff5100);
+    background: rgba(211, 211, 211, 0);
+    display: flex;
+  }
+  
+  .hexagon-wrapper {
+    margin: auto;
+    display: flex;
+    text-align: initial;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  .hexagon {
+    position: relative;
+    width: 46%;
+    height: 80%;
+    margin: auto;
+    color: white;
+    background: linear-gradient(-180deg, white, #ff5100);
+    display: flex;
+    transition: 0.5s;
+  }
+  
+  .hexagon i {
+    z-index: 1;
+    margin: auto;
+    font-size: 12px;
+    color: transparent;
+    background: linear-gradient(45deg, #a58fe9, #ff5100);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  
+  .hexagon:before,
+  .hexagon:after {
+    position: absolute;
+    content: "";
+    background: inherit;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  .hexagon:before {
+    transform: rotateZ(60deg);
+  }
+  .hexagon:after {
+    transform: rotateZ(-60deg);
+  }
+  .hexagon:hover {
+    border-radius: 12px;
+    transition: 0.5s;
+  }
+  .hexagon:hover:before {
+    border-radius: 12px;
+    transition: 0.5s;
+  }
+  .hexagon:hover:after {
+    border-radius: 12px;
+    transition: 0.5s;
+  }

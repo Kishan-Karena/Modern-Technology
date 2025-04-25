@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+        #div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height: 100vh; */
+            height: 100px;
+            background: #252839;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
+
+        #p {
+            font-family: 'Mochiy Pop One', sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            letter-spacing: 2px;
+            line-height: 1em;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+        }
+
+        #ul {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        #ul #li {
+            position: relative;
+            list-style: none;
+        }
+
+        #ul #li #a {
+            font-size: 2em;
+            text-decoration: none;
+            letter-spacing: 2px;
+            line-height: 1em;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+        }
+
+        #ul #li #a::before {
+            content: attr(data-text);
+            position: absolute;
+            color: var(--clr);
+            width: 0;
+            overflow: hidden;
+            transition: 1s;
+            border-right: 8px solid var(--clr);
+            -webkit-text-stroke: 1px var(--clr);
+        }
+
+        #ul #li #a:hover::before {
+            width: 100%;
+            filter: drop-shadow(0 0 25px var(--clr))
+        }
+
+
+        .ism2 {
+            float: left;
+            width: 450px;
+            height: 250px;
+            border-radius: 6px;
+            margin-right: 0.5cm;
+        }
+
+        .ism {
+            width: 400px;
+            height: 230px;
+            border-radius: 10px;
+        }
+
+        .p1 {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        /* footer */
+        footer {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: black;
+            height: auto;
+            width: 100%;
+
+            padding-top: 40px;
+            color: #fff;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .footer-content h3 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            text-transform: capitalize;
+            line-height: 3rem;
+        }
+
+        .footer-content p {
+            max-width: 500px;
+            margin: 10px auto;
+            line-height: 28px;
+            font-size: 14px;
+            color: #cacdd2;
+        }
+
+        .socials {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 3rem 0;
+        }
+
+        .socials li {
+            margin: 0 10px;
+        }
+
+        .socials a {
+            text-decoration: none;
+            color: #fff;
+            border: 1.1px solid white;
+            padding: 5px;
+
+            border-radius: 50%;
+
+        }
+
+        .socials a i {
+            font-size: 1.1rem;
+            width: 20px;
+
+
+            transition: color .4s ease;
+
+        }
+
+        .socials a:hover i {
+            color: aqua;
+        }
+
+        .footer-bottom {
+            background: #000505;
+            width: 100%;
+            padding: 20px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            float: left;
+            font-size: 14px;
+            word-spacing: 2px;
+            text-transform: capitalize;
+        }
+
+        .footer-bottom p a {
+            color: #44bae8;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .footer-bottom span {
+            text-transform: uppercase;
+            opacity: .4;
+            font-weight: 200;
+        }
+
+        .footer-menu {
+            float: right;
+
+        }
+
+        .footer-menu ul {
+            display: flex;
+        }
+
+        .footer-menu ul li {
+            padding-right: 10px;
+            display: block;
+        }
+
+        .footer-menu ul li a {
+            color: #ba4201;
+            text-decoration: none;
+        }
+
+        .footer-menu ul li a:hover {
+            color: #27bcda;
+        }
+
+        @media (max-width:500px) {
+            .footer-menu ul {
+                display: flex;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+        .div {
+            width: 250px;
+            /* height: 100vh; */
+            overflow: hidden;
+            background: linear-gradient(18deg, #36fa00, #ff5100);
+            background: rgba(211, 211, 211, 0);
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* justify-content: space-evenly; */
+            /* align-items: center; */
+        }
+
+        .hexagon-wrapper {
+            margin: auto;
+            display: flex;
+            text-align: initial;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .hexagon {
+            position: relative;
+            width: 46%;
+            height: 80%;
+            margin: auto;
+            color: white;
+            background: linear-gradient(-180deg, white, #ff5100);
+            display: flex;
+            /* align-content: center; */
+            /* justify-content: center; */
+            transition: 0.5s;
+        }
+
+        .hexagon i {
+            z-index: 1;
+            margin: auto;
+            font-size: 12px;
+            color: transparent;
+            background: linear-gradient(45deg, #a58fe9, #ff5100);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .hexagon:before,
+        .hexagon:after {
+            position: absolute;
+            content: "";
+            background: inherit;
+            height: 100%;
+            width: 100%;
+            border-radius: 0;
+            transition: 0.5s;
+            transform-origin: center;
+        }
+
+        .hexagon:before {
+            transform: rotateZ(60deg);
+        }
+
+        .hexagon:after {
+            transform: rotateZ(-60deg);
+        }
+
+        .hexagon:hover {
+            border-radius: 12px;
+            transition: 0.5s;
+        }
+
+        .hexagon:hover:before {
+            border-radius: 12px;
+            transition: 0.5s;
+        }
+
+        .hexagon:hover:after {
+            border-radius: 12px;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!--- Navbar --->
+            <!-- <nav id="div" class="navbar navbar-expand-lg"> -->
+            <nav class="navbar navbar-expand-lg">
+                <div id="div">
+                    <ul id="ul">
+                        <li id="li" style="--clr:#00ade1">
+                            <a id="a" href="#" data-text="&nbsp;MODERN TECHNOLOGY">&nbsp;<i class=""></i>MODERN
+                                TECHNOLOGY&nbsp;</a>
+                        </li>
+                        <li id="li" style="--clr:#ff6492">
+                            <a id="a" href="#" data-text="&nbsp;Home">&nbsp;Home&nbsp;</a>
+                        </li>
+                        <li id="li" style="--clr:#ffdd1c">
+                            <a id="a" href="ABOUT.HTML" data-text="&nbsp;About">&nbsp;About&nbsp;</a>
+                        </li>
+                        <li id="li" style="--clr:#00dc82">
+                            <a id="a" href="SERVICES.HTML" data-text="&nbsp;Services">&nbsp;Services&nbsp;</a>
+                        </li>
+                        <!-- <li id="li" style="--clr:#00dc82">
+                        <a id="a" href="#" data-text="&nbsp;Blog">&nbsp;Blog&nbsp;</a>
+                    </li> -->
+                        <li id="li" style="--clr:#dc00d4">
+                            <a id="a" href="CONTACT.HTML" data-text="&nbsp;Contact">&nbsp;Contact&nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- </nav> -->
+            <!--# Navbar #-->
+        </header>
+
+        <hr>
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>How Technology Started</h1>
+                <br>
+                <img src="image/How-Technology-Started.jpg" class="ism2">
+                <br>
+                <p class="p1">The reason why technology is given more importance is that it has changed the way we
+                    progress. No doubt from generation to generation, we only made our life better but when we invented
+                    modern technology we changed our perception of advancement forever. It was thought that we needed
+                    more time to see significant results, but this is not the case anymore. Modern technology is making
+                    us question everything we know about making progress. Technological progress changes our life
+                    significantly, which is why it is important for us to understand it better. So, let’s start our
+                    discussion with how technology evolved.</p>
+                <br>
+                <h2>Evolution of technology</h2>
+                <br>
+                <p class="p1">Technology has been evolving since the very beginning. But, here, we will be focusing on
+                    modern technology to learn how it started. Each century came with the invention of new technology
+                    that made our everyday life easier. Now let’s look at a few technologies and the benefits they
+                    provided.</p>
+                <br>
+                <h2>Technology invented in the 18th century</h2>
+                <br>
+                <p class="p1">In the 18th century, many technologies such as submarines, cotton gin, and lightning rods
+                    were invented. The submarine invented at that time was nothing like today’s submarine. But the
+                    concept of going underwater and traveling lead to this invention. The story behind the invention of
+                    the first submarine is more interesting. Basically, it was invented so that it could be used to
+                    deliver time bombs or mines to enemy vessels in wartime.</p>
+                <br>
+                <h2>Technology invented in the 19th century</h2>
+                <br>
+                <p class="p1">In the 19th century, we saw inventions that became the foundation of the technology that
+                    we have today. Space rockets, heat engines, digital cameras, telephones, fax machines, typewriters,
+                    cars, and many such technologies were invented. In this century, we figured out the theory of space
+                    rockets. We made the first electric batteries. The paper-making machine was developed. Based on
+                    chemical technology, the primitive fax machine was developed. In addition to this, many basic laws
+                    of electromagnetic were set and the theory of the conservation of energy was outlined.</p>
+                <br>
+                <h2>Technology invented in the 20th century</h2>
+                <br>
+                <p class="p1">Then came the 20th century, when more new technologies were invented. We were able to send
+                    radio wave signals across countries. The everyday technology that we use today was developed in this
+                    century in the primitive form. Take examples of vacuum cleaners, air conditioners, microwave ovens,
+                    and cloth washers, all these were invented at this time. By the time we reached the late 20th
+                    century, we had most of the technology that could transform our lives in the next century. We had
+                    satellites, computer graphics, electronic books, cell phones, e-commerce, wireless internet, and
+                    many more.</p>
+                <br>
+                <h2>Technology invented in the 21st century</h2>
+                <br>
+                <p class="p1">We live in the 21st century when we have almost every technology to live a simple life.
+                    Our century started with the inventions of MP 3 players that changed the way we listen to music.
+                    Now, we have robots that can perform household chores. Technology like computers, laptops,
+                    smartphones, are easily available to anyone. We are making advancements and developing technology
+                    that can function like human brains. One such example is neural networks, which recognize patterns
+                    and make decisions, just like we humans do.
+                </p>
+                <br>
+                <h2>Start of modern technology</h2>
+                <br>
+                <p class="p1">Internet is the very foundation of modern technology. And, it is so important that without
+                    it, we wouldn’t have been able to achieve most of what we have now. Before the late 20th century, it
+                    took more time to find solutions for the problems. But, this is not the case anymore. Today we are
+                    more connected globally than we ever were. The perk of global technology is that finding solutions
+                    to problems has become easier.</p>
+                <br>
+                <p class="p1">The future is going to be all about modern technology such as artificial intelligence, big
+                    data, augmented reality, virtual reality, and blockchains. Our life can change significantly as
+                    these technologies have transformative powers. Every industry will experience drastic changes once
+                    these are implemented on a wider scale. Let’s discuss them in detail.</p>
+                <br>
+                <h2>Artificial intelligence</h2>
+                <br>
+                <p class="p1">This technology is about building machines that can perform tasks like us, humans. In
+                    fact, we have different types of artificial technology. It is classified based on the tasks that
+                    they are designed to complete. We have generalized AI and applied AI. Generalized AI is about
+                    developing the intelligence of machines so that they turn their hands to different tasks, whereas
+                    applied AI is focused on carrying out specific tasks.</p>
+                <br>
+                <h2>Big data</h2>
+                <br>
+                <p class="p1">Big data is the reason why companies like Google are doing well. If it was not for big
+                    data, big companies would not have been able to generate profits like they do today. It allows
+                    businesses to acquire customers through advertising. If you searched for some website, then you are
+                    more likely to find ads related to it on your browser. It tracks our habits and accordingly
+                    recommends products and services.</p>
+                <br>
+                <h2>Augmented and Virtual reality</h2>
+                <br>
+                <p class="p1">Training directly in the real world can be dangerous in some sectors. This is why we have
+                    the virtual reality that eliminates the risks associated with it. Virtual environments allow
+                    individuals to practice and develop their skills, which they can apply in the real world. Technology
+                    such as AR and VR is going to be the focus of industries to train their staff. It will help them to
+                    reduce the training costs and eliminate potential risks.</p>
+                <br>
+                <h2>Blockchain</h2>
+                <br>
+                <p class="p1">This technology has made keeping records of transactions simpler. Earlier using the simple
+                    database, we could only get limited information but with blockchain, we can check the whole history.
+                    The best part about blockchain is that it is decentralized, which means it is more secure. By using
+                    such technology, different sectors can invest their time, efforts, and resources in making progress.
+                </p>
+                <br>
+                <h2>Conclusion</h2>
+                <br>
+                <p class="p1">In this discussion, we learned how early technology changed our today’s world for the
+                    good. And, how modern technology is going to change the future for the better. You might </p>
+            </div>
+            <div class="col-sm-4">
+                <div>Related Articles</div>
+                <hr>
+                <img src="image/How-Technology-Started.jpg" class="ism" id="i5">
+                <a href="f1.html" class="link1">
+                    <p class="p1" id="p3">How Technology Started</p>
+                </a>
+                <br>
+                <br>
+                <img src="image/Modern-Technology-and-Social-Life.jpg" class="ism">
+                <a href="f2.html" class="link1">
+                    <p class="p1" id="p4">Modern Technology and Social Life</p>
+                </a>
+                <br>
+                <img src="5.jpeg" class="ism">
+                <a href="f3.html" class="link1">
+                    <p class="p1" id="p5">Modern Technology in Agriculture</p>
+                </a>
+                <br>
+                <img src="6.jpeg" class="ism">
+                <a href="f4.html" class="link1">
+                    <p class="p1" id="p6">Modern Technology in Medicine</p>
+                </a>
+                <br>
+                <img src="image/3D-Printers.jpg" class="ism">
+                <a href="#" class="link1">
+                    <p class="p1" id="p6">3D-Printers</p>
+                </a>
+                <br>
+                <img src="image/Advantages-and-Disadvantages-of-Computer.jpg" class="ism">
+                <a href="#" class="link1">
+                    <p class="p1" id="p6">Advantages-and-Disadvantages-of-Computer</p>
+                </a>
+                <br>
+                <img src="image/Advantages-and-Disadvantages-of-GPS.jpg" class="ism">
+                <a href="#" class="link1">
+                    <p class="p1" id="p6">Advantages-and-Disadvantages-of-GPS</p>
+                </a>
+                <br>
+                <img src="image/Advantages-of-Technology.jpg" class="ism">
+                <a href="#" class="link1">
+                    <p class="p1" id="p6">Advantages-of-Technology</p>
+                </a>
+                <br>
+                <img src="image/Apps-to-Limit-Access.jpg" class="ism">
+                <a href="#" class="link1">
+                    <p class="p1" id="p6">Apps-to-Limit-Access</p>
+                </a>
+                <br>
+                <img src="image/Architecture-Technology.jpg" class="ism">
+                <a href="#" class="link1">
+                    <p class="p1" id="p6">Architecture-Technology</p>
+                </a>
+                <br>
+                <img src="image/Automated-Backup-Systems.jpg" class="ism">
+                <a href="#" class="link1">
+                    <p class="p1" id="p6">Automated-Backup-Systems</p>
+                </a>
+            </div>
+        </div>
+            <P class="p1">have realized it took us centuries to make such advancements. But, today’s technology has the potential
+                to bring transformational change in just a couple of decades. We don’t need to wait for more to see
+                how things might turn out to be. We have the technology for this, too. Using them, we can visualize
+                many possibilities of what our future could be like.</P>
+        
+        <!-- footer -->
+        <footer>
+            <div class="footer-content">
+                <h3>MODERN TECHNOLOGY</h3>
+                <p>This Website Is Best For Modern Technology Information</p>
+                <div class="div">
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-linkedin-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>copyright &copy; <a href="#">NHP X KK</a> </p>
+                <div class="footer-menu">
+                    <ul class="f-menu">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Servises</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+        #div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height: 100vh; */
+            height: 100px;
+            background: #252839;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
+
+        #p {
+            font-family: 'Mochiy Pop One', sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            letter-spacing: 2px;
+            line-height: 1em;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+        }
+
+        #ul {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        #ul #li {
+            position: relative;
+            list-style: none;
+        }
+
+        #ul #li #a {
+            font-size: 2em;
+            text-decoration: none;
+            letter-spacing: 2px;
+            line-height: 1em;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+        }
+
+        #ul #li #a::before {
+            content: attr(data-text);
+            position: absolute;
+            color: var(--clr);
+            width: 0;
+            overflow: hidden;
+            transition: 1s;
+            border-right: 8px solid var(--clr);
+            -webkit-text-stroke: 1px var(--clr);
+        }
+
+        #ul #li #a:hover::before {
+            width: 100%;
+            filter: drop-shadow(0 0 25px var(--clr))
+        }
+
+        .ism2 {
+            float: left;
+            width: 450px;
+            height: 250px;
+            border-radius: 6px;
+            margin-right: 0.5cm;
+        }
+
+        .p1 {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .ism {
+            width: 400px;
+            height: 230px;
+            border-radius: 10px;
+        }
+
+        .ilg {
+            width: 100%;
+        }
+
+        /* footer */
+        footer {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: black;
+            height: auto;
+            width: 100%;
+
+            padding-top: 40px;
+            color: #fff;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .footer-content h3 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            text-transform: capitalize;
+            line-height: 3rem;
+        }
+
+        .footer-content p {
+            max-width: 500px;
+            margin: 10px auto;
+            line-height: 28px;
+            font-size: 14px;
+            color: #cacdd2;
+        }
+
+        .socials {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 3rem 0;
+        }
+
+        .socials li {
+            margin: 0 10px;
+        }
+
+        .socials a {
+            text-decoration: none;
+            color: #fff;
+            border: 1.1px solid white;
+            padding: 5px;
+
+            border-radius: 50%;
+
+        }
+
+        .socials a i {
+            font-size: 1.1rem;
+            width: 20px;
+
+
+            transition: color .4s ease;
+
+        }
+
+        .socials a:hover i {
+            color: aqua;
+        }
+
+        .footer-bottom {
+            background: #000505;
+            width: 100%;
+            padding: 20px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            float: left;
+            font-size: 14px;
+            word-spacing: 2px;
+            text-transform: capitalize;
+        }
+
+        .footer-bottom p a {
+            color: #44bae8;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .footer-bottom span {
+            text-transform: uppercase;
+            opacity: .4;
+            font-weight: 200;
+        }
+
+        .footer-menu {
+            float: right;
+
+        }
+
+        .footer-menu ul {
+            display: flex;
+        }
+
+        .footer-menu ul li {
+            padding-right: 10px;
+            display: block;
+        }
+
+        .footer-menu ul li a {
+            color: #ba4201;
+            text-decoration: none;
+        }
+
+        .footer-menu ul li a:hover {
+            color: #27bcda;
+        }
+
+        @media (max-width:500px) {
+            .footer-menu ul {
+                display: flex;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+        .div {
+            width: 250px;
+            /* height: 100vh; */
+            overflow: hidden;
+            background: linear-gradient(18deg, #36fa00, #ff5100);
+            background: rgba(211, 211, 211, 0);
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* justify-content: space-evenly; */
+            /* align-items: center; */
+        }
+
+        .hexagon-wrapper {
+            margin: auto;
+            display: flex;
+            text-align: initial;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .hexagon {
+            position: relative;
+            width: 46%;
+            height: 80%;
+            margin: auto;
+            color: white;
+            background: linear-gradient(-180deg, white, #ff5100);
+            display: flex;
+            /* align-content: center; */
+            /* justify-content: center; */
+            transition: 0.5s;
+        }
+
+        .hexagon i {
+            z-index: 1;
+            margin: auto;
+            font-size: 12px;
+            color: transparent;
+            background: linear-gradient(45deg, #a58fe9, #ff5100);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .hexagon:before,
+        .hexagon:after {
+            position: absolute;
+            content: "";
+            background: inherit;
+            height: 100%;
+            width: 100%;
+            border-radius: 0;
+            transition: 0.5s;
+            transform-origin: center;
+        }
+
+        .hexagon:before {
+            transform: rotateZ(60deg);
+        }
+
+        .hexagon:after {
+            transform: rotateZ(-60deg);
+        }
+
+        .hexagon:hover {
+            border-radius: 12px;
+            transition: 0.5s;
+        }
+
+        .hexagon:hover:before {
+            border-radius: 12px;
+            transition: 0.5s;
+        }
+
+        .hexagon:hover:after {
+            border-radius: 12px;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!--- Navbar --->
+            <!-- <nav id="div" class="navbar navbar-expand-lg"> -->
+            <nav class="navbar navbar-expand-lg">
+                <div id="div">
+                    <ul id="ul">
+                        <li id="li" style="--clr:#00ade1">
+                            <a id="a" href="#" data-text="&nbsp;MODERN TECHNOLOGY">&nbsp;<i class=""></i>MODERN
+                                TECHNOLOGY&nbsp;</a>
+                        </li>
+                        <li id="li" style="--clr:#ff6492">
+                            <a id="a" href="#" data-text="&nbsp;Home">&nbsp;Home&nbsp;</a>
+                        </li>
+                        <li id="li" style="--clr:#ffdd1c">
+                            <a id="a" href="ABOUT.HTML" data-text="&nbsp;About">&nbsp;About&nbsp;</a>
+                        </li>
+                        <li id="li" style="--clr:#00dc82">
+                            <a id="a" href="SERVICES.HTML" data-text="&nbsp;Services">&nbsp;Services&nbsp;</a>
+                        </li>
+                        <!-- <li id="li" style="--clr:#00dc82">
+                        <a id="a" href="#" data-text="&nbsp;Blog">&nbsp;Blog&nbsp;</a>
+                    </li> -->
+                        <li id="li" style="--clr:#dc00d4">
+                            <a id="a" href="CONTACT.HTML" data-text="&nbsp;Contact">&nbsp;Contact&nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- </nav> -->
+            <!--# Navbar #-->
+        </header>
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>Modern Technology in Agriculture</h1>
+                <br>
+                <img src="image/Modern-Technology-in-Agriculture.jpg" alt="" class="ilg">
+                <br>
+                <p class="p1">Agriculture has been there since the development of humankind as a species has started.
+                    From the time people started realizing that they can grow food in the soil, they have been trying
+                    things. Different crops, seeds, cultivation methods, and finally, incorporating technology to make
+                    everything easier. Instead of manually plowing acres of land with the limited power of a human, a
+                    tractor can make it easier like never before. The results from hundreds of human hours can be
+                    achieved within a few hours on a tractor.</p>
+                <br>
+                <p class="p1">It is just an example of how modern technology has enhanced the production of food and the
+                    effectiveness of agriculture. From the cultivation of the seeds to storing them under appropriate
+                    conditions, everything is done using precise measurements and knowledge achieved from in-depth
+                    researches conducted with the help of technology. Controlling pests and making the food items grow
+                    faster saving a ton of time made everything much more effective.</p>
+                <br>
+
+                <p class="p1">Scientists are even producing hybrids of plans adapting the good factors of different
+                    species, resulting in a much better form. Not talking about the budding and crafting we all learned
+                    in the schools. But there is much more going on. None of these would be possible if we didn’t have
+                    the help of highly capable computers and tons of technological resources around us. So, modern
+                    technology definitely has a huge impact on agriculture.</p>
+                <br>
+                <h2>Agriculture Technology: Definition, Examples, and Application</h2>
+                <br>
+                <img src="image/7.jpeg" class="ism2">
+                <p class="p1">The advancements in agricultural technology are among the key factors for our survival as
+                    a species. According to an Agriculture 4.0 – The Future Of Farming Technology 2018 report, 8% of the
+                    world’s population (estimated 650 million people) will stay undernourished by 2030. Moreover, the
+                    2018 global GDP of agriculture was between 3% and 4%, which is a drop from a steady 9%-10% in recent
+                    decades. The final indicator that we need faster, more efficient technological improvements is the
+                    sheer demand. The same report estimates we must produce 70% more food by 2050. With that said, let’s
+                    take a deeper look into agriculture technology.</p>
+                <br>
+                <h2>What is agriculture technology?</h2>
+                <br>
+                <p class="p1">Agriculture technology or agrotechnology refers to the use of technology in agriculture,
+                    aquaculture, and horticulture. Moreover, it’s directly affected by technological developments in
+                    agronomy, agricultural science, and agricultural engineering. And, although we, as mankind, went
+                    through 4 agricultural revolutions between approximately 10,000 BC and the 19th century, none made
+                    such as large impact as the Third Agricultural Revolution or the Green Revolution (the 1950s and
+                    later).</p>
+                <br>
+                <h2>Examples of agriculture technology</h2>
+                <br>
+                <p class="p1">The following are some things that represent newer agriculture technology:</p>
+                <br>
+                <h2>Satellite imagery</h2>
+                <br>
+                <p class="p1">The technical limitations of satellite imagery from the early 1970s, resolution, and
+                    frequency, don’t exist anymore. We now have access to real-time data and large area coverage, which
+                    means we can seamlessly integrate satellite photography data into other technologies. These include
+                    robotics, remote sensing, machine learning, the Internet of Things (IoT), sensors, weather
+                    prediction, and more. As such, we can provide data analytics for various purposes, from small-scale
+                    farmers to crop insurance personnel, corporations, and government agencies. The image can also be
+                    modified to include spatial, temporal, and spectral range, or to build composite maps.</p>
+                <br>
+                <h2>Vertical and urban farming</h2>
+                <br>
+                <p class="p1">Vertical farming is sustainable and requires less space since layers can be stacked
+                    vertically, and is thus often combined with urban farming. Moreover, it utilizes optimized soil,
+                    aeroponic and hydroponic methods for growing. This allows for superb results in imperfect or what
+                    would be inadequate environments. Additionally, crops are not only shielded from seasonal changes
+                    and extreme weather, but often micro-managed via dedicated climate control and energy-efficient
+                    ultraviolet LED lighting. Vertical farming, compared to a regular one, uses between 70% and 95% less
+                    water, fewer types and quantities of fertilizers and supplements, and no pesticides. Some crops show
+                    a productivity increase of between 350 and 390 times compared to regular growing at the same
+                    acreage.</p>
+                <br>
+                <h2>Aircraft and drone technology</h2>
+                <br>
+                <p class="p1">We’ve used agricultural aircraft since the 1920s to disperse fertilizers or pesticides. At
+                    a later date, hydroseeding, a technique of dispersing seeds and mulch, gained popularity. In all 3
+                    cases, they perform aerial application, e.g., crop dusting, over large areas in a short time. In
+                    contrast, drones have better precision, a cheaper cost of maintenance, and provide cheaper and
+                    easier operation. Research also shows they’re 5 times faster at aerial spraying than traditional
+                    machinery. Also, they’re ideal for analyzing fields and soil, generating 3D maps, and identifying
+                    dry spots and potential improvements. Furthermore, drones can continuously monitor crop health and
+                    growth process, create time-series animations, notice changes in plants, and raise alarm if the
+                    disease appears. Finally, research suggests the use of drones shrinks the cost by 80-85% compared to
+                </p>
+                <br>
+                <h1>How Technology is Integrated in Agriculture</h1>
+                <br>
+                <img src="image/How-Technology-is-Integrated-in-Agriculture.jpg" class="ism2">
+                <p class="p1">You will be amazed if you look at the progress technology has brought into the
+                    agricultural sector. It has been a blessing for farmers across the world. It has not just helped
+                    farmers to make better agricultural decisions but has also provided them with tools to carry out
+                    agricultural activities easily. Farmers can save more resources and time now using technology. They
+                    are grateful for the technology that has made them more self-sufficient. They can now make informed
+                    decisions and prioritize the quality of the food they produce.</p>
+                <br>
+                <h1>Modern Technology for Enhancing Agricultural Productivity</h1>
+                <br>
+                <img src="image/Modern-Technology-for-Enhancing-Agricultural-Productivity.jpg" class="ism2">
+                <p class="p1">Before starting with the topic, I would like to highlight the need for using Modern
+                    Technology in the Agricultural sector. Our population is growing, this means that we would need more
+                    food to feed them. Here’s where modern technology comes into the picture. We need smart work here
+                    along with hard work. So, Modern technology helps to produce quality food in large quantities and
+                    reduce wastage. To feed our current and future generations we need to enhance agricultural
+                    productivity using modern technology.</p>
+            </div>
+            <div class="col-sm-4">
+                <div>Related Articles</div>
+                <hr>
+                <img src="image/How-Technology-Started.jpg" class="ism" id="i5">
+                <a href="f1.html" class="link1"><p class="p1" id="p3">How Technology Started</p></a>
+                <br>
+                <br>
+                <img src="image/Modern-Technology-and-Social-Life.jpg" class="ism">
+                <a href="f2.html" class="link1"><p class="p1" id="p4">Modern Technology and Social Life</p></a>
+                <br>
+                <img src="5.jpeg" class="ism">
+                <a href="f3.html" class="link1"><p class="p1" id="p5">Modern Technology in Agriculture</p></a>
+                <br>
+                <img src="6.jpeg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">Modern Technology in Medicine</p></a>
+                <br>
+                <img src="image/Cracked-Concrete.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">Cracked-Concrete</p></a>
+                <br>
+                <img src="image/Entertainment-Technology-Variant.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">Entertainment-Technology-Variant</p></a>
+                <br>
+                <img src="image/How-Technology-Affects-the-Society.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">How-Technology-Affects-the-Society</p></a>
+                <br>
+                <img src="image/How-Technology-Can-Help-to-Save-the-Environment.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">How-Technology-Can-Help-to-Save-the-Environment</p></a>
+                <br>
+                <img src="image/How-Technology-Destroyed-Human-Interaction.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">How-Technology-Destroyed-Human-Interaction</p></a>
+                <br>
+                <img src="image/How-Technology-is-Impacting-the-Job-Market.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">How-Technology-is-Impacting-the-Job-Market</p></a>
+                <br>
+                <img src="image/Machines.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">Machines</p></a>
+                <br>
+                <img src="image/Modern-Technology-and-Younger-Generation.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">Modern-Technology-and-Younger-Generation</p></a>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer>
+            <div class="footer-content">
+                <h3>MODERN TECHNOLOGY</h3>
+                <p>This Website Is Best For Modern Technology Information</p>
+                <div class="div">
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-linkedin-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>copyright &copy; <a href="#">NHP X KK</a> </p>
+                <div class="footer-menu">
+                    <ul class="f-menu">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Servises</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>

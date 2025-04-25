@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+        #div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height: 100vh; */
+            height: 100px;
+            background: #252839;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
+
+        #p {
+            font-family: 'Mochiy Pop One', sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            letter-spacing: 2px;
+            line-height: 1em;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+        }
+
+        #ul {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        #ul #li {
+            position: relative;
+            list-style: none;
+        }
+
+        #ul #li #a {
+            font-size: 2em;
+            text-decoration: none;
+            letter-spacing: 2px;
+            line-height: 1em;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+        }
+
+        #ul #li #a::before {
+            content: attr(data-text);
+            position: absolute;
+            color: var(--clr);
+            width: 0;
+            overflow: hidden;
+            transition: 1s;
+            border-right: 8px solid var(--clr);
+            -webkit-text-stroke: 1px var(--clr);
+        }
+
+        #ul #li #a:hover::before {
+            width: 100%;
+            filter: drop-shadow(0 0 25px var(--clr))
+        }
+
+        .ism2 {
+            float: left;
+            width: 450px;
+            height: 250px;
+            border-radius: 6px;
+            margin-right: 0.5cm;
+        }
+
+        .p1 {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .ism {
+            width: 400px;
+            height: 230px;
+            border-radius: 10px;
+        }
+
+        .ilg {
+            width: 100%;
+        }
+
+        /* footer */
+        footer {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: black;
+            height: auto;
+            width: 100%;
+
+            padding-top: 40px;
+            color: #fff;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .footer-content h3 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            text-transform: capitalize;
+            line-height: 3rem;
+        }
+
+        .footer-content p {
+            max-width: 500px;
+            margin: 10px auto;
+            line-height: 28px;
+            font-size: 14px;
+            color: #cacdd2;
+        }
+
+        .socials {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 3rem 0;
+        }
+
+        .socials li {
+            margin: 0 10px;
+        }
+
+        .socials a {
+            text-decoration: none;
+            color: #fff;
+            border: 1.1px solid white;
+            padding: 5px;
+
+            border-radius: 50%;
+
+        }
+
+        .socials a i {
+            font-size: 1.1rem;
+            width: 20px;
+
+
+            transition: color .4s ease;
+
+        }
+
+        .socials a:hover i {
+            color: aqua;
+        }
+
+        .footer-bottom {
+            background: #000505;
+            width: 100%;
+            padding: 20px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            float: left;
+            font-size: 14px;
+            word-spacing: 2px;
+            text-transform: capitalize;
+        }
+
+        .footer-bottom p a {
+            color: #44bae8;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .footer-bottom span {
+            text-transform: uppercase;
+            opacity: .4;
+            font-weight: 200;
+        }
+
+        .footer-menu {
+            float: right;
+
+        }
+
+        .footer-menu ul {
+            display: flex;
+        }
+
+        .footer-menu ul li {
+            padding-right: 10px;
+            display: block;
+        }
+
+        .footer-menu ul li a {
+            color: #ba4201;
+            text-decoration: none;
+        }
+
+        .footer-menu ul li a:hover {
+            color: #27bcda;
+        }
+
+        @media (max-width:500px) {
+            .footer-menu ul {
+                display: flex;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+        .div {
+            width: 250px;
+            /* height: 100vh; */
+            overflow: hidden;
+            background: linear-gradient(18deg, #36fa00, #ff5100);
+            background: rgba(211, 211, 211, 0);
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* justify-content: space-evenly; */
+            /* align-items: center; */
+        }
+
+        .hexagon-wrapper {
+            margin: auto;
+            display: flex;
+            text-align: initial;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .hexagon {
+            position: relative;
+            width: 46%;
+            height: 80%;
+            margin: auto;
+            color: white;
+            background: linear-gradient(-180deg, white, #ff5100);
+            display: flex;
+            /* align-content: center; */
+            /* justify-content: center; */
+            transition: 0.5s;
+        }
+
+        .hexagon i {
+            z-index: 1;
+            margin: auto;
+            font-size: 12px;
+            color: transparent;
+            background: linear-gradient(45deg, #a58fe9, #ff5100);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .hexagon:before,
+        .hexagon:after {
+            position: absolute;
+            content: "";
+            background: inherit;
+            height: 100%;
+            width: 100%;
+            border-radius: 0;
+            transition: 0.5s;
+            transform-origin: center;
+        }
+
+        .hexagon:before {
+            transform: rotateZ(60deg);
+        }
+
+        .hexagon:after {
+            transform: rotateZ(-60deg);
+        }
+
+        .hexagon:hover {
+            border-radius: 12px;
+            transition: 0.5s;
+        }
+
+        .hexagon:hover:before {
+            border-radius: 12px;
+            transition: 0.5s;
+        }
+
+        .hexagon:hover:after {
+            border-radius: 12px;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!--- Navbar --->
+            <!-- <nav id="div" class="navbar navbar-expand-lg"> -->
+            <nav class="navbar navbar-expand-lg">
+                <div id="div">
+                    <ul id="ul">
+                        <li id="li" style="--clr:#00ade1">
+                            <a id="a" href="#" data-text="&nbsp;MODERN TECHNOLOGY">&nbsp;<i class=""></i>MODERN
+                                TECHNOLOGY&nbsp;</a>
+                        </li>
+                        <li id="li" style="--clr:#ff6492">
+                            <a id="a" href="#" data-text="&nbsp;Home">&nbsp;Home&nbsp;</a>
+                        </li>
+                        <li id="li" style="--clr:#ffdd1c">
+                            <a id="a" href="ABOUT.HTML" data-text="&nbsp;About">&nbsp;About&nbsp;</a>
+                        </li>
+                        <li id="li" style="--clr:#00dc82">
+                            <a id="a" href="SERVICES.HTML" data-text="&nbsp;Services">&nbsp;Services&nbsp;</a>
+                        </li>
+                        <!-- <li id="li" style="--clr:#00dc82">
+                        <a id="a" href="#" data-text="&nbsp;Blog">&nbsp;Blog&nbsp;</a>
+                    </li> -->
+                        <li id="li" style="--clr:#dc00d4">
+                            <a id="a" href="CONTACT.HTML" data-text="&nbsp;Contact">&nbsp;Contact&nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- </nav> -->
+            <!--# Navbar #-->
+        </header>
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>1. Modern Technology in Education</h1>
+                <br>
+                <img src="image/Modern-Tech-Education.jpg" class="ilg">
+                <br>
+                <p class="p1">We already spoke about how modern technology helps education in-depth. Let’s mention a few
+                    obvious benefits to give you a short reminder. You can receive instant notifications, weekly
+                    schedules,
+                    lectures, practice tests, educational games, or presentations to your smartphone, computer, or even
+                    a
+                    smartwatch. Then, you can use text, audio, and video to communicate back and forth with other
+                    students
+                    and professors. Furthermore, modern technology allows you to never step foot in a brick-and-mortar
+                    school again. You can earn your credits online and receive your diploma via mail.</p>
+                <br>
+                <p class="p1">The environment benefits simultaneously. Professors and authors no longer need to print
+                    thousands of books to spread knowledge. A small electronic file, a low-spec computer, and a low-cost
+                    projector in person, or screen sharing through the Internet can help educate a large group of
+                    students
+                    for cheap. The reduced cost of operation also benefits the pupils. Many schools and universities use
+                    the
+                    money to provide scholarships and purchase equipment for impoverished students. That way, everyone
+                    has
+                    an equal opportunity to learn. Purdue University has a great article on the effect of technology on
+                    education.</p>
+                <br>
+                <h2>2. Modern Technology in Business</h2>
+                <br>
+                <img src="image/Modern-Technology-in-Business.jpg" class="ilg">
+                <br>
+                <p class="p1">Remember long commute, shared offices filled with cramped cubicles, and long car/airplane
+                    rides just to close a business deal, do market research, or handle bureaucracy? Modern technology
+                    has provided an alternative for all of those and more. You can do many of the jobs from home,
+                    removing transportation costs and huge time waste. If the job requires you to go outside, you can
+                    receive instructions on your smartphone or smartwatch. You can use the same device to do research,
+                    communicate with the business partners, and in some cases, handle the entire business.</p>
+                <br>
+                <p class="p1">The ability to communicate, delegate, analyze, and determine things remotely improves
+                    efficiency, productivity, and chances of success. Plus, every such device has a built-in GPS and an
+                    Internet connection. This helps human resources, marketing, production, and management departments
+                    evaluate progress, get real-time feedback, and ensure everyone is doing their part correctly.</p>
+                <br>
+                <p class="p1">In turn, this positively affects workers‘ attitude, interaction, satisfaction, and
+                    improves their safety. Speaking about safety and security, you can’t help but think of the
+                    difference some of the technological advancements have made. Think of encryption, Information
+                    Technology, storage space, remote access, high-quality cameras, motion sensors, fingerprint sensors,
+                    VPNs, and other safeguards.</p>
+                <br>
+                <br>
+
+            </div>
+            <div class="col-sm-4">
+                <div>Related Articles</div>
+                <hr>
+                <img src="image/How-Technology-Started.jpg" class="ism" id="i5">
+                <a href="f1.html" class="link1"><p class="p1" id="p3">How Technology Started</p></a>
+                <br>
+                <br>
+                <img src="image/Modern-Technology-and-Social-Life.jpg" class="ism">
+                <a href="f2.html" class="link1"><p class="p1" id="p4">Modern Technology and Social Life</p></a>
+                <br>
+                <img src="5.jpeg" class="ism">
+                <a href="f3.html" class="link1"><p class="p1" id="p5">Modern Technology in Agriculture</p></a>
+                <br>
+                <img src="6.jpeg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">Modern Technology in Medicine</p></a>
+                <br>
+                <img src="image/Biogas.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">Biogas</p></a>
+                <br>
+                <img src="image/Categories-of-Technology-Assistive.jpg" class="ism">
+                <a href="f4.html" class="link1"><p class="p1" id="p6">Categories-of-Technology-Assistive</p></a>
+            </div>
+        </div>
+        <p class="p1">Perhaps the biggest advantage modern technology has brought to business is globalization.
+            A tiny company can compete with an industry giant and reach a market across the globe. This affects
+            multiple things positively. It improves competition and allows companies to find remote sources for
+            raw materials, workforce, knowledge, improvements, and opportunities. Best of all, the company
+            doesn’t need to have a physical store. Thanks to modern technology, and e-commerce popularity, more
+            types of businesses are making a shift to cut operating costs.</p>
+        <!-- footer -->
+        <footer>
+            <div class="footer-content">
+                <h3>MODERN TECHNOLOGY</h3>
+                <p>This Website Is Best For Modern Technology Information</p>
+                <div class="div">
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon">
+                            <i class="fab fa-linkedin-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>copyright &copy; <a href="#">NHP X KK</a> </p>
+                <div class="footer-menu">
+                    <ul class="f-menu">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Servises</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
